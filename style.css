@@ -1,13 +1,30 @@
 body {
     font-family: sans-serif;
+    position : relative;
+    margin:0;
+    padding:0;
   }
   
   header {
     background-color: gray;
     height : 100vh;
-    width : 96%;
+    width : 96vw;
     position:relative;
     padding: 20px;
+    background-image: url("assets/images/specials-2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
   }
   
   header h1 {
@@ -60,10 +77,6 @@ body {
      color: white;
     text-align: center;
     padding: 40px 0;
-    background-image: url("assets/images/specials-2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
   }
   
   .hero img {
@@ -81,12 +94,12 @@ body {
   }
   
   .hero button {
-    background-color: orange;
+    background-color: transparent;
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
     text-decoration: none;
-    border: none;
+    border: 2px solid orange;
     cursor: pointer;
   }
 
@@ -130,7 +143,8 @@ body {
   .about{
     background-color: white;
     display : flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 
   }
 
@@ -141,6 +155,11 @@ body {
     margin-right: 80px;
     margin-bottom: 40px;
 
+  }
+
+  .about>div{
+    margin-top: 30px;
+    width : 45%;
   }
 
   .about h2{
@@ -228,7 +247,7 @@ body {
     display : flex;
     flex-direction: column;
     justify-content: space-between;
-    /* margin : 20px; */
+    width : 500px;
   }
 
   .mitems li>div{
@@ -257,10 +276,13 @@ body {
   }
 
   .specials{
-    display : flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+  }
+
+  .specials>p{
+    margin-top: -2px;;
+    text-align: center;
+    font-weight : 100;
   }
 
   .specials h2 span{
@@ -277,32 +299,244 @@ body {
     margin-top : 20px;
   }
 
-  .specials-left{
-    display : flex;
+  .specials-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+  
+  .specials-left {
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     gap: 10px;
-    font-weight : 600;
-    margin-left : 20px;
-    height : 40%;
-    width : 30%;
+    font-weight: 600;
+    width: 30%;
+  }
+  
+  .specials-right {
+    display:flex;
+    justify-content: space-evenly;
+    width : 70%;
+  }
+
+  .specials-right img{
+    width : 280px;
+    height : 280px;
+  }
+
+  .item-left {
+    text-align: left;
+  }
+
+  .item-left>p{
+    font-size : 1rem;
+    font-weight : 300;
+    color : gray;
   }
 
   .high {
     color : orange;
   }
 
-  .specials-center{
-    display : flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 10px;
-    font-weight : 600;
-    margin-left : 20px;
-    height : 40%;
-    width : 30%;
+
+
+  .events{
+    margin-top: 10px;
+    position : relative;
+    background-image: url("assets/images/events-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width:95vw;
+    height : 95vh;
+    isolation: isolate;
+    padding : 3%;
   }
 
+  .events::before{
+    content:"";
+    position : absolute;
+    z-index : -1;
+    inset : 0;
+    background-color: black;
+    opacity : 0.6;
+  }
+
+  .events h2{
+    color : white;
+    text-align: center;
+    margin-top : 10px;
+  }
+
+  .events h2 span{
+    color : orange;
+  }
+
+  .events-items{
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .events-left{
+    width : 600px;
+    height : 600px;
+    height : 20%;
+    margin-top : 20px;
+  }
+
+  .events-right{
+    height : 50%;
+    width : 50%;
+    margin-right: 10px;
+    color : white;
+  }
+
+  .events-right h3{
+    color: orange;
+  }
+
+  .events-right h2{
+    font-weight : 1000;
+    text-align: left;
+    text-decoration : underline orange;
+  }
+
+  .diff .points{
+    display : flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .diff .points img{
+    width : 20px;
+    height : 20px;
+  }
+
+  .book-table{
+    margin-left: 50px;
+    margin-top : 50px;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .book-table h2{
+    margin-top : 20px;
+    margin-bottom: 20px;
+  }
+
+  .book-table h2 span{
+    color : orange;
+  }
+
+  .book-table p{
+    text-align: center;
+    margin-top: -10px;
+  }
+
+  .book-table form{
+    text-align: center;
+    padding: 30px;
+    width : 90%;
+    display: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .book-table .form-top{
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width : 100%;
+  }
+
+  .book-table form input{
+    padding : 5px;
+    width : 30%;
+    height : 30px;
+    margin-top : 10px;
+    border : 1px solid gray;
+    border-radius : 5px;
+    padding-left : 10px;
+    margin-bottom: 15px;
+  }
+
+  .book-table form input::placeholder{
+    color : black;
+  }
+
+  .book-table textarea{
+    padding : 5px;
+    margin-top: 10px;
+    width : 100%;
+    height : 100px;
+    border-radius: 5px;
+  }
+  .book-table textarea::placeholder{
+    font-family: sans-serif;
+    color : black;
+  }
+
+  .book-table button{
+    background-color : orange;
+    color : white;
+    border : none;
+    border-radius : 30px;
+    padding : 10px 20px;
+    cursor : pointer;
+    margin-top : 20px;
+  }
+
+  .Gallery{
+    margin-left:20px;
+    margin-top : 100px;
+    height : 100vh;
+    width : 96vw;
+    text-align: center;
+    padding : 10px;
+  }
+
+  .Gallery h2 span{
+    color : orange;
+  }
+
+  .gallery-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 50px;
+  }
+
+  .gallery-container {
+    width: 24%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease; 
+  }
+
+  .gallery-container:hover img {
+    transform: scale(1.2); 
+  }
+  
+
+
+
+
+
+
+  
 
 
 
