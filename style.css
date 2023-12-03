@@ -8,17 +8,17 @@ body {
     margin:0;
     padding:0;
   }
+
   
   header {
-    background-color: gray;
     height : 100vh;
     width : 96vw;
     position:relative;
     padding: 20px;
     background-image: url("assets/images/specials-2.png");
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center center;
+    isolation: isolate;
   }
 
   header::before {
@@ -28,7 +28,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+    opacity : 0.5;
+    background-color: black;
   }
 
   .top{
@@ -94,6 +96,7 @@ body {
   }
   
   .hero {
+    margin-top: 7%;
      color: white;
     text-align: center;
     padding: 40px 0;
@@ -862,7 +865,7 @@ footer h1{
 }
 
 footer span{
-  font-weight: 800;
+  font-weight : 800;
 }
 
 
